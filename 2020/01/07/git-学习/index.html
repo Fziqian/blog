@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Hello World - Fziqian
+          git 学习 - Fziqian
         
     </title>
 
-    <link rel="canonical" href="https://fziqian.github.io/blog/blog/2019/08/18/hello-world/">
+    <link rel="canonical" href="https://fziqian.github.io/blog/blog/2020/01/07/git-学习/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
@@ -90,12 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
+                              <a class="tag" href="/blog/tags/#git" title="git">git</a>
+                            
                         </div>
-                        <h1>Hello World</h1>
+                        <h1>git 学习</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Fziqian on
-                            2019-08-18
+                            2020-01-07
                         </span>
                     </div>
                 
@@ -212,20 +214,149 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                <h3 id="git配置用户名、邮箱"><a href="#git配置用户名、邮箱" class="headerlink" title="git配置用户名、邮箱"></a>git配置用户名、邮箱</h3><pre><code>git config --global user.name &apos;FZiqian&apos;
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+git config --global user.email &apos;xxx@qq.com&apos;
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+git config --local    只对某个仓库有效</code></pre><h3 id="git-三种状态"><a href="#git-三种状态" class="headerlink" title="git 三种状态"></a>git 三种状态</h3><pre><code>modified (已修改)
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+staged/tracked (已暂存)
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+committed (已提交)</code></pre><h3 id="初始化git项目"><a href="#初始化git项目" class="headerlink" title="初始化git项目"></a>初始化git项目</h3><pre><code>git init 
 
+git status
+
+git add file
+
+(use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</code></pre><h3 id="将暂存区文件移出代码库的跟踪"><a href="#将暂存区文件移出代码库的跟踪" class="headerlink" title="将暂存区文件移出代码库的跟踪 ???"></a>将暂存区文件移出代码库的跟踪 ???</h3><pre><code>git rm README.md    删除工作区文件和暂存区的文件跟踪，并在下次提交时不纳入版本管理
+
+git rm  -f README.md    
+此方法为--force及强制删除工作区与暂存区的文件，用于当工作区与暂存区不一致时
+
+以上rm方法都不会删除仓库里的文件</code></pre><hr>
+<h3 id="git-commit-m-‘msg’"><a href="#git-commit-m-‘msg’" class="headerlink" title="git commit -m ‘msg’"></a>git commit -m ‘msg’</h3><pre><code>git commit -am &apos;add and commit&apos;
+
+git commit add -u    更新提交所有已经被git跟踪的文件
+
+(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+将暂存区的文件重置（不会改变工作区的内容）
+
+&quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+本地文件会被版本库的文件覆盖
+
+这里在不想提交修改文件或者误删工作区文件后恢复文件时使用
+git log</code></pre><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><pre><code>git reset HEAD        将暂存区恢复回版本库
+
+git reset HEAD -- filename  将指定暂存区的文件恢复为版本库
+
+git reset HEAD^        将仓库的版本倒退一个 
+
+此时因为版本库倒退，本地的代码不变，所以暂存区会显示有unstaged的修改
+
+此时如果想将工作区与仓库同步 可使用git checkout -- &lt;file&gt;</code></pre><blockquote>
+<p>HEAD~2 上上个 HEAD~3 上上上个</p>
+</blockquote>
+<blockquote>
+<p>HEAD^ 上一个 HEAD^^^ 上上上个</p>
+</blockquote>
+<h3 id="git-reset-的参数"><a href="#git-reset-的参数" class="headerlink" title="git reset 的参数"></a>git reset 的参数</h3><pre><code>git reset [--mixed] HEAD^ （默认）效果同上
+
+git reset --soft HEAD^ (此时会显示有staged但未commit的文件，相当于可以重新commit一次代码)
+
+git reset --hard HEAD^ (此时工作区与仓库会同步回滚，no unstaged,no uncommitted)
+
+hard方式有危险，因为会把工作区的内容消掉</code></pre><hr>
+<pre><code>git commit --amend    更正最近一次的提交
+
+git commit --amend -m &apos;msg&apos;    加-m 不会使用vim打开编辑massage
+
+更新以前的提交massage</code></pre><hr>
+<pre><code>git rebase -i parentCommitID(hash)  rebase 变基 -i 交互式
+
+reword
+
+使用rebase在本地修改未push的可以，但是最后不要修改已经push了的
+使用rebase将以前的多个commit合并
+
+git rebase -i parentCommitID(hash) squash</code></pre><h3 id="回滚指定id的快照（可向前-向后滚）"><a href="#回滚指定id的快照（可向前-向后滚）" class="headerlink" title="回滚指定id的快照（可向前/向后滚）"></a>回滚指定id的快照（可向前/向后滚）</h3><pre><code>git reset a1fsda(快照的hash值) 
+
+git reflog 可以查看所有的版本历史id（包括已经回滚的）</code></pre><h3 id="回滚个别文件"><a href="#回滚个别文件" class="headerlink" title="回滚个别文件"></a>回滚个别文件</h3><pre><code>git reset 版本快照id 文件名/路径
+
+此方法不会修改整个版本库的head指针
+
+
+注意上面回滚不加reset的参数，默认就是mixed方式回滚</code></pre><h3 id="diff命令"><a href="#diff命令" class="headerlink" title="diff命令"></a>diff命令</h3><p><code>比较不同状态或版本文件的不同</code></p>
+<pre><code>git diff    默认比较的是【工作区】与暂存区的不同
+
+git diff 版本号1 版本号2    比较两个版本的不同
+
+git diff 版本号            比较【工作区】与指定版本的不同
+
+git diff --cached [版本号]    --cached参数表示比较的是暂存区与版本库的不同
+
+git diff -- filename        比较指定文件</code></pre><hr>
+<pre><code>git mv 旧文件名 新文件名    重命名文件</code></pre><h3 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h3><p><code>查看分支</code></p>
+<pre><code>git branch -av            查看所有分支，并显示对应的最新commit
+
+git branch 分支名        创建一个新的分支
+
+git checkout 分支名        切换一个分支
+
+将上面两步合并
+
+git checkout -b 分支名        创建并切换到一个新的分支
+
+git checkout -b 新分支 基础分支    创建并切换到一个基于基础分支的新分支
+
+如果基础分支不制定，则为当前分支</code></pre><h3 id="git-log-–decorate-decorate-装饰"><a href="#git-log-–decorate-decorate-装饰" class="headerlink" title="git log –decorate        decorate 装饰"></a>git log –decorate        decorate 装饰</h3><pre><code>显示提交指向的分支(branch)和tag\
+
+git log -n5 --oneline        显示最近5条日志  -n5
+
+git log --oneline tmp        tmp 分支名 显示分支的历史
+
+git help --web log        使用浏览器打开 git log 命令的帮助文档
+
+git log --decorate --oneline    --oneline 只显示快照的id和说明
+
+git log --decorate --oneline --graph --all    --graph 以图表的方式显示    --all 显示所有的分支
+
+git merge 分支名        将指定的分支合并到本分支中
+
+git branch -d(--delete) 分支名    删除分支
+
+git branch -D 分支名        强制删除没有merge的分支</code></pre><h3 id="reset-与-checkout的区别"><a href="#reset-与-checkout的区别" class="headerlink" title="reset 与 checkout的区别"></a>reset 与 checkout的区别</h3><p>reset主要用于版本快照的切换</p>
+<p>checkout主要用于切换分支</p>
+<pre><code>git checkout -- filename    将指定文件从暂存区里恢复到工作区
+
+git stash    将暂存区的内容临时存放到stash 清空暂存区
+
+git stash list    查看stash列表</code></pre><h3 id="提交紧急任务后恢复stash"><a href="#提交紧急任务后恢复stash" class="headerlink" title="提交紧急任务后恢复stash"></a>提交紧急任务后恢复stash</h3><pre><code>git stash apply 将stash列表里的挑出来恢复工作区和暂存区
+
+git stash pop   将stash列表里的跳出来恢复后并将stash列表里的对应stash删除</code></pre><blockquote>
+<p>.gitignore 忽略doc已经doc文件夹下所有文件</p>
+</blockquote>
+<p>doc/ </p>
+<pre><code>git clone --bare /path/my/project/.git new.git 哑协议
+
+git clone --bare file:/path/my/project/.git new.git 智能协议（带进度条，传输进行了压缩优化）</code></pre><h3 id="git-remote-查看远程仓库"><a href="#git-remote-查看远程仓库" class="headerlink" title="git remote 查看远程仓库"></a>git remote 查看远程仓库</h3><pre><code>git remote -v 查看远程仓库详细信息
+
+git remote add remoteName file:/path/my/project/new.git 添加一个远程仓库
+
+git remote remove remoteName
+
+git remote rename old new</code></pre><blockquote>
+<p>git push –set-upstream remoteName/branchName branchName 将设置上游的远程仓库分支指向本地分支</p>
+</blockquote>
+<h3 id="git-push-push到远程仓库"><a href="#git-push-push到远程仓库" class="headerlink" title="git push    push到远程仓库"></a>git push    push到远程仓库</h3><pre><code>git push remoteName --all 将所有的分支都push到远程仓库
+
+git merge --allow-unrelated-histories branchName 
+合并允许无关联的版本仓库 有时候在github上面创建项目为非空，合并本地仓库时会用到</code></pre><h3 id="使用github创建版本库，上传本地代码"><a href="#使用github创建版本库，上传本地代码" class="headerlink" title="使用github创建版本库，上传本地代码"></a>使用github创建版本库，上传本地代码</h3><pre><code>git remote add origin https:github.com/Fziqian/git-demo.git
+
+git push -u origin master
+
+使用github clone以后，使用git checkout -b branchName origin/branchName 将远端的分支clone并切换</code></pre>
                 
 
                 <hr>
@@ -233,9 +364,13 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/blog/2020/01/07/git-学习/" data-toggle="tooltip" data-placement="top" title="git 学习">&larr; Previous Post</a>
+                            <a href="/blog/2020/01/07/markdown语法学习/" data-toggle="tooltip" data-placement="top" title="markdown语法学习">&larr; Previous Post</a>
                         </li>
                     
+                    
+                        <li class="next">
+                            <a href="/blog/2019/08/18/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">Next Post &rarr;</a>
+                        </li>
                     
                 </ul>
 
@@ -269,6 +404,8 @@
                     <h5><a href="/blog/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/blog/tags/#git" title="git">git</a>
+                        
                     </div>
                 </section>
                 
